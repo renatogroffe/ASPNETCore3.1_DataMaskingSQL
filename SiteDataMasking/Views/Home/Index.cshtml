@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h2>Clientes</h2>
+
+@model IEnumerable<SiteDataMasking.Models.Cliente>
+
+<div class="table-responsive" style="padding: 25px;">
+    <table class="table table-hover">
+        <tr>
+            <th>Id</th>
+            <th>Cliente</th>
+            <th>E-mail</th>
+            <th>Limite Crédito</th>
+            <th>Cartão</th>
+            <th>Cód. Segurança</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.IdCliente
+                </td>
+                <td>
+                    @item.NomeCliente
+                </td>
+                <td>
+                    @item.Email
+                </td>
+                <td>
+                    @item.LimiteCredito.ToString("#,##0.00")
+                </td>
+                <td>
+                    @item.NumeroCartao
+                </td>
+                <td>
+                    @item.CodSeguranca
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
